@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>Notes</h1>
+            <div class="header-controls">
+                <div class="search-bar">
+                    <span class="material-symbols-rounded search-icon">search</span>
+                    <input type="text" id="search-input" placeholder="Search notes...">
+                </div>
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle Theme">
+                    <span class="material-symbols-rounded">dark_mode</span>
+                </button>
+            </div>
+        </header>
+
+        <main class="notes-grid" id="notes-container">
+            <!-- Notes will be injected here -->
+            <div class="empty-state" id="empty-state">
+                <span class="material-symbols-rounded empty-icon">note_stack</span>
+                <p>No notes yet. Create one to get started!</p>
+            </div>
+        </main>
+
+        <button id="add-note-btn" class="fab" aria-label="Create New Note">
+            <span class="material-symbols-rounded">add</span>
+        </button>
+    </div>
+
+    <!-- Edit/Create Note Modal -->
+    <div class="modal-overlay" id="note-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <input type="text" id="note-title-input" placeholder="Title" class="modal-title-input">
+                <button id="close-modal-btn" class="icon-btn" aria-label="Close">
+                    <span class="material-symbols-rounded">close</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <textarea id="note-body-input" placeholder="Type something..." class="modal-body-input"></textarea>
+            </div>
+            <div class="modal-footer">
+                <span id="last-edited" class="last-edited-text"></span>
+                <div class="modal-actions">
+                    <button id="delete-note-btn" class="icon-btn danger hidden" aria-label="Delete Note">
+                        <span class="material-symbols-rounded">delete</span>
+                    </button>
+                    <button id="save-note-btn" class="primary-btn">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
